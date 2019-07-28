@@ -1,11 +1,11 @@
 package com.taskManagement.dev.repository.gestionSuivi;
 
-import javax.swing.text.Document;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.taskManagement.dev.dao.gestionSuivi.Documentation;
+
 @Repository
-public interface DocumentationRepository extends JpaRepository<Document, Long>{
+public interface DocumentationRepository extends JpaRepository<Documentation, Long> {
 
 }

@@ -3,6 +3,8 @@ package com.taskManagement.dev.dao;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.stereotype.Component;
+import com.taskManagement.dev.dao.gestionSuivi.EtatAvancement;
+import com.taskManagement.dev.dao.gestionSuivi.Phase;
 
 
 @Component
@@ -32,6 +36,15 @@ public class Projet implements Serializable {
 	private String paysProjet;
 	private String villeProjet;
 	private double coutProjet;
+	
+	/***** RELATION AVEC LA TABLE PHASE *****/
+	@OneToMany(mappedBy="projet",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	private Set<Phase> phases;
+	
+	/***** RELATION AVEC LA TABLE ETAT D'AVANCEMENT *****/
+	@ManyToOne
+	@JoinColumn(name="id_etat_davancement")
+	private EtatAvancement etatAvancement;
 	
 	
 }

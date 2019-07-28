@@ -1,16 +1,27 @@
 package com.taskManagement.dev.dao.gestionSuivi;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.stereotype.Component;
+
+import com.taskManagement.dev.dao.Projet;
+
+
 @Component
 @Entity
 public class Phase implements Serializable{
@@ -25,5 +36,21 @@ public class Phase implements Serializable{
 	private Date dateFinPhase;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateLimitePhase;
-
+	
+	
+	/***** RELATION AVEC LA TABLE ETAT D'AVANCEMENT *****/
+	@ManyToOne
+	@JoinColumn(name="etat_davancement")
+	private EtatAvancement etatAvancement;
+	
+	/***** RELATION AVEC LA TABLE ETAPE *****/
+	@OneToMany(mappedBy="phase",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	private Set<Etape> etapes;
+	
+	/***** RELATION AVEC LA TABLE PROJET *****/
+	@ManyToOne
+	@JoinColumn(name="Projet")
+	private Projet projet;
+	
+	
 }
