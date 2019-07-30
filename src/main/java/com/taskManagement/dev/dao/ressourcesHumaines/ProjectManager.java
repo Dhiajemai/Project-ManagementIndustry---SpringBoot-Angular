@@ -1,5 +1,13 @@
 package com.taskManagement.dev.dao.ressourcesHumaines;
 
-public class ProjectManager {
+import javax.persistence.DiscriminatorValue;
 
+
+@DiscriminatorValue("ProjectManager")
+public class ProjectManager extends Employee {
+	
+	private int projetDirigeOilGaz;
+	private int projetDirigeTurbines;
+	private int projetDirigeTot;
+	private int nbreContratSigner;
 }

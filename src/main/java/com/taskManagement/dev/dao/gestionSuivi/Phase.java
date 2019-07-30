@@ -21,9 +21,17 @@ import org.springframework.stereotype.Component;
 
 import com.taskManagement.dev.dao.Projet;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 
 @Component
 @Entity
+@Data @NoArgsConstructor @AllArgsConstructor @ToString
 public class Phase implements Serializable{
 	
 	@Id

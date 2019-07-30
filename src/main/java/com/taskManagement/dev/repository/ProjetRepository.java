@@ -1,11 +1,10 @@
 package com.taskManagement.dev.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.taskManagement.dev.dao.Projet;
 
-@Repository
+@RepositoryRestResource
 public interface ProjetRepository extends JpaRepository<Projet, Long>{
 
 }

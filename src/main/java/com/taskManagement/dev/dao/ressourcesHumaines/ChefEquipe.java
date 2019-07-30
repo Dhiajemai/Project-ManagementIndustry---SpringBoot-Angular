@@ -1,14 +1,13 @@
 package com.taskManagement.dev.dao.ressourcesHumaines;
 
-import java.io.Serializable;
-
-import javax.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
 
 
-import org.springframework.stereotype.Component;
-
-
-public class ChefEquipe implements Serializable {
+@DiscriminatorValue("ChefEquipe")
+public class ChefEquipe extends Employee {
 	
+	private int nbreProjetOilGaz;
+	private int nbreProjetTurbines;
+	private int nbreProjetTot;
 
 }

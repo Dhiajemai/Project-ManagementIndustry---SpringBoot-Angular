@@ -12,11 +12,21 @@ import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Component
 @Entity
-public class Documentation implements Serializable{
-	
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Documentation implements Serializable {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idDocument;
@@ -24,11 +34,10 @@ public class Documentation implements Serializable{
 	private String descDocument;
 	private String typeDocument;
 	private String cheminDocument;
-	
+
 	/***** RELATION AVEC LA TABLE SOUS-ETAPE *****/
 	@ManyToOne
-	@JoinColumn(name="sous_etape")
+	@JoinColumn(name = "sous_etape")
 	private SousEtape sousEtape;
-
 
 }
