@@ -1,7 +1,6 @@
 package com.taskManagement.dev.dao.gestionSuivi;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
@@ -23,9 +22,7 @@ import com.taskManagement.dev.dao.Projet;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 

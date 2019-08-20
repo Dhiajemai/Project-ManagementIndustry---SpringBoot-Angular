@@ -2,13 +2,11 @@ package com.taskManagement.dev.dao.ressourcesHumaines;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -39,8 +37,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "TYPE")
-@DiscriminatorValue("Employee")
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "Post_TYPE")
 public class Employee implements Serializable {
 
 	@Id
@@ -54,6 +51,11 @@ public class Employee implements Serializable {
 	private long teEleEmp;
 	private String photo;
 	private String posteEmp;
+	private String userName;
+	private String password;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+	private Set<Roles> roles;
 
 	@ManyToOne
 	@JoinColumn(name = "id_staff")

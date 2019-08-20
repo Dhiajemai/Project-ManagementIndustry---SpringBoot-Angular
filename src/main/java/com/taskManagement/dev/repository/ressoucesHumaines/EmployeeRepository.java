@@ -8,4 +8,7 @@ import com.taskManagement.dev.dao.ressourcesHumaines.Employee;
 @RepositoryRestResource
 public interface EmployeeRepository extends JpaRepository<Employee, Long>{
 
+	Employee findByUsername(String username);
+
+	
 }

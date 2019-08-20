@@ -11,13 +11,9 @@ import javax.persistence.ManyToOne;
 
 import org.springframework.stereotype.Component;
 
-import com.taskManagement.dev.dao.gestionSuivi.EtatAvancement;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Component
