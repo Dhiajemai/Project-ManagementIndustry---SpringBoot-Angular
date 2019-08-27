@@ -25,7 +25,7 @@ import lombok.ToString;
 public class Documentation implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long idDocument;
 	private String nomDocument;
 	private String descDocument;

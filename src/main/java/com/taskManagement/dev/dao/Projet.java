@@ -41,7 +41,7 @@ import lombok.ToString;
 public class Projet implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long idProjet;
 	private String descriptionProjet;
 	@Temporal(TemporalType.TIMESTAMP)

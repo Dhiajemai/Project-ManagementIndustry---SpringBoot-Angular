@@ -27,9 +27,9 @@ import lombok.ToString;
 public class EtatAvancement implements Serializable{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long idEtatAvancement;
-	private String libelleAvancement;
+	private String nomEtatAvancement;
 	private String descriAvanacement;
 	
 	/***** RELATION AVEC LA TABLE PROJET *****/

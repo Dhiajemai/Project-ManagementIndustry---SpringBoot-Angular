@@ -14,11 +14,11 @@ import javax.persistence.OneToMany;
 import org.springframework.stereotype.Component;
 
 import com.taskManagement.dev.dao.Projet;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 
 @Component
 @Entity
@@ -28,11 +28,14 @@ import lombok.ToString;
 @ToString
 public class SocieteCliente implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idSociete;
 	private String nomSociete;
-	private String prenomSociete;
 	private String adresseSociete;
 	private long telSociete;
 	private String emailSociete;
@@ -48,6 +51,6 @@ public class SocieteCliente implements Serializable {
 	private Set<Commission> commission;
 	
 	@OneToMany(mappedBy = "societeCliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Set<AppelDoffre> appelDoffres;
+	private Set<AppelDoffre> appelDoffres;	
 
 }
